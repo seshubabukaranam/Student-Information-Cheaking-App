@@ -35,15 +35,18 @@ function student(question, answer) {
   var userAnswer = readlineSync.question(question);
   if (userAnswer.toUpperCase() === answer.toUpperCase()) { // branching
     score = score + 1;
+     
   }
+  else {
+   console.log("You have entered wrong details");
+  }
+  console.log("Your score is: ", score);
 }
 function game() {
   for (var i = 0; i < questions.length; i++) {
     var currentQuestion = questions[i];
     student(currentQuestion.question, currentQuestion.answer)
-
   }
-  console.log("Your score is: ", score);
 }
 welcome();
 game();
